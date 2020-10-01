@@ -5,11 +5,11 @@ pygame.mixer.pre_init(43000, -16, 1, 512)
 mixer.init()
 
 #Sounds
-hit = pygame.mixer.Sound("sounds/hit.ogg")
-start_hit = pygame.mixer.Sound("sounds/vustrel.ogg")
-take_shots_sound = pygame.mixer.Sound("sounds/ammon_sound.ogg")
-take_healls_sound = pygame.mixer.Sound("sounds/healls.ogg")
-met_hit_sound = pygame.mixer.Sound("sounds/meteorit_sound.ogg")
+hit = pygame.mixer.Sound("sound/hit.ogg")
+start_hit = pygame.mixer.Sound("sound/vustrel.ogg")
+take_shots_sound = pygame.mixer.Sound("sound/ammon_sound.ogg")
+take_healls_sound = pygame.mixer.Sound("sound/healls.ogg")
+met_hit_sound = pygame.mixer.Sound("sound/meteorit_sound.ogg")
 ###
 
 #Create window
@@ -18,7 +18,7 @@ wind_hieght = 600
 
 window = pygame.display.set_mode((wind_width, wind_hieght))
 pygame.display.set_caption("StarBattle")
-pygame.display.set_icon(pygame.image.load("ico.ico"))
+pygame.display.set_icon(pygame.image.load("icon.ico"))
 ###
 
 #Create screen
@@ -35,11 +35,11 @@ game_start_first = True
 
 # text of info string
 pygame.font.init()
-hells_of_hero = pygame.font.Font("Font.ttf", 32)
-bullets_of_hero = pygame.font.Font("Font.ttf", 32)
-hells_of_enemy1 = pygame.font.Font("Font.ttf", 25)
-hells_of_enemy2 = pygame.font.Font("Font.ttf", 25)
-win_or_lose = pygame.font.Font("Font.ttf", 32)
+hells_of_hero = pygame.font.Font("Font_txt.ttf", 32)
+bullets_of_hero = pygame.font.Font("Font_txt.ttf", 32)
+hells_of_enemy1 = pygame.font.Font("Font_txt.ttf", 25)
+hells_of_enemy2 = pygame.font.Font("Font_txt.ttf", 25)
+win_or_lose = pygame.font.Font("Font_txt.ttf", 32)
 win_or_lose_font = False
 ###
 
@@ -78,7 +78,7 @@ hero_max_y = screen_hieght / 100 * 85
 hero_can_move = True
 hero_x = screen_width / 100 * 40
 hero_y = screen_hieght / 100 * 60
-hero = Sprite(hero_x, hero_y, "images\h.png")
+hero = Sprite(hero_x, hero_y, "image\h.png")
 hero_hells = 1
 bullets = 25
 winORlose = ""
@@ -103,7 +103,7 @@ emeny_x = 0
 emeny_y = wind_hieght/100*11.6
 max_speed1 = 4
 min_speed1 = 1
-enemy1_condition = "images\e.png"
+enemy1_condition = "image\e.png"
 speed = 2
 enemy = Sprite(emeny_x, emeny_y, enemy1_condition)
 can_enemy_move = True
@@ -117,27 +117,27 @@ def conditions_for_enemy1():
     global enemy1_condition
     global enemy
     if enemy1_hells == 10:
-        enemy1_condition = "images\e.png"
+        enemy1_condition = "image\e.png"
     if enemy1_hells == 9:
-         enemy1_condition = "images\e_b1.png"
+         enemy1_condition = "image\e_b1.png"
     if enemy1_hells == 8:
-         enemy1_condition = "images\e_b1.png"
+         enemy1_condition = "image\e_b1.png"
     if enemy1_hells == 7:
-        enemy1_condition = "images\e_b2.png"
+        enemy1_condition = "image\e_b2.png"
     if enemy1_hells == 6:
-        enemy1_condition = "images\e_b2.png"
+        enemy1_condition = "image\e_b2.png"
     if enemy1_hells == 5:
-        enemy1_condition = "images\e_b3.png"
+        enemy1_condition = "image\e_b3.png"
     if enemy1_hells == 4:
-        enemy1_condition = "images\e_b3.png"
+        enemy1_condition = "image\e_b3.png"
     if enemy1_hells == 3:
-        enemy1_condition = "images\e_b4.png"
+        enemy1_condition = "image\e_b4.png"
     if enemy1_hells == 2:
-        enemy1_condition = "images\e_b4.png"
+        enemy1_condition = "image\e_b4.png"
     if enemy1_hells == 1:
-        enemy1_condition = "images\e_b5.png"
+        enemy1_condition = "image\e_b5.png"
     if enemy1_hells == 0:
-        enemy1_condition = "images\e_b6.png"
+        enemy1_condition = "image\e_b6.png"
     if hit_anim_enemy_active == False:
         enemy = Sprite(enemy.x, enemy.y, enemy1_condition)
 def emeny1_move():
@@ -187,11 +187,11 @@ def hit_enemy1_anim():
         can_enemy_push = False
         hit_anim_enemy_active = True
         if hit_anim_timer == 1:
-            enemy = Sprite(enemy.x, enemy.y, "images\empty.png")
+            enemy = Sprite(enemy.x, enemy.y, "image\empty.png")
         if hit_anim_timer == 100:
             enemy = Sprite(enemy.x, enemy.y, enemy1_condition)
         if hit_anim_timer == 200:
-            enemy = Sprite(enemy.x, enemy.y, "images\empty.png")
+            enemy = Sprite(enemy.x, enemy.y, "image\empty.png")
         if hit_anim_timer == 300:
             enemy = Sprite(enemy.x, enemy.y, enemy1_condition)
             hit_anim_enemy_active = False
@@ -208,7 +208,7 @@ emeny2_x = wind_width -60
 emeny2_y = wind_hieght/100*11.6
 max_speed2 = 4
 min_speed2 = 1
-enemy2_condition = "images\e.png"
+enemy2_condition = "image\e.png"
 speed2 = 2
 enemy2 = Sprite (emeny2_x, emeny2_y, enemy2_condition)
 can_enemy2_move = True
@@ -253,27 +253,27 @@ def conditions_for_enemy2():
     global enemy2_condition
     global enemy2
     if enemy2_hells == 10:
-        enemy2_condition = "images\e.png"
+        enemy2_condition = "image\e.png"
     if enemy2_hells == 9:
-        enemy2_condition = "images\e_b1.png"
+        enemy2_condition = "image\e_b1.png"
     if enemy2_hells == 8:
-        enemy2_condition = "images\e_b1.png"
+        enemy2_condition = "image\e_b1.png"
     if enemy2_hells == 7:
-        enemy2_condition = "images\e_b2.png"
+        enemy2_condition = "image\e_b2.png"
     if enemy2_hells == 6:
-        enemy2_condition = "images\e_b2.png"
+        enemy2_condition = "image\e_b2.png"
     if enemy2_hells == 5:
-        enemy2_condition = "images\e_b3.png"
+        enemy2_condition = "image\e_b3.png"
     if enemy2_hells == 4:
-        enemy2_condition = "images\e_b3.png"
+        enemy2_condition = "image\e_b3.png"
     if enemy2_hells == 3:
-        enemy2_condition = "images\e_b4.png"
+        enemy2_condition = "image\e_b4.png"
     if enemy2_hells == 2:
-        enemy2_condition = "images\e_b4.png"
+        enemy2_condition = "image\e_b4.png"
     if enemy2_hells == 1:
-        enemy2_condition = "images\e_b5.png"
+        enemy2_condition = "image\e_b5.png"
     if enemy2_hells == 0:
-        enemy2_condition = "images\e_b6.png"
+        enemy2_condition = "image\e_b6.png"
     if hit_anim_enemy2_active == False:
         enemy2 = Sprite(enemy2.x, enemy2.y, enemy2_condition)
 def hit_enemy2_anim():
@@ -291,11 +291,11 @@ def hit_enemy2_anim():
         can_enemy2_push = False
         hit_anim_enemy2_active = True
         if hit_anim_timer2 == 1:
-            enemy2 = Sprite(enemy2.x, enemy2.y, "images\empty.png")
+            enemy2 = Sprite(enemy2.x, enemy2.y, "image\empty.png")
         if hit_anim_timer2 == 100:
             enemy2 = Sprite(enemy2.x, enemy2.y, enemy2_condition)
         if hit_anim_timer2 == 200:
-            enemy2 = Sprite(enemy2.x, enemy2.y, "images\empty.png")
+            enemy2 = Sprite(enemy2.x, enemy2.y, "image\empty.png")
         if hit_anim_timer2 == 300:
             enemy2 = Sprite(enemy2.x, enemy2.y, enemy2_condition)
             hit_anim_enemy2_active = False
@@ -310,7 +310,7 @@ def hit_enemy2_anim():
 #--------------hero_bullet-------------#
 hb_x = wind_width - 1000
 hb_y = wind_hieght - 1000
-h_b = Sprite(hb_x, 410, "images\shot1.png")
+h_b = Sprite(hb_x, 410, "image\shot1.png")
 h_b.push = False
 can_hero_push = True
 def hb_move():
@@ -354,7 +354,7 @@ def hb_move():
 #--------------enemy1_bullet-------------#
 eb_x = wind_width - 100
 eb_y = wind_hieght - 100
-e_b1 = Sprite(hb_x, 410, "images\shot2.png")
+e_b1 = Sprite(hb_x, 410, "image\shot2.png")
 e_b1.push = False
 e_b1.speed = 2
 can_enemy_push = True
@@ -364,7 +364,7 @@ enemy1_push = False
 #--------------enemy2_bullet-------------#
 eb2_x = wind_width - 100
 eb2_y = wind_hieght - 100
-e_b2 = Sprite(hb_x, 410, "images\shot3.png")
+e_b2 = Sprite(hb_x, 410, "image\shot3.png")
 e_b2.push = False
 e_b2.speed = 2
 can_enemy2_push = True
@@ -374,8 +374,8 @@ enemy2_push = False
 #Loot
 loot_x = -50
 loot_y = -50
-healls_loot = Sprite(loot_x, loot_y, "images\heals.png")
-bullets_loot = Sprite(loot_x, loot_y, "images\shots.png")
+healls_loot = Sprite(loot_x, loot_y, "image\heals.png")
+bullets_loot = Sprite(loot_x, loot_y, "image\shots.png")
 loot = 0
 loot_spawned = False
 spawn_time = 100
@@ -457,7 +457,7 @@ need_met_time = True
 need_fly_met_timer = True
 met_fly = False
 
-meteorite = Sprite(met_start_point_x, met_start_point_y, "images\meteorit.png")
+meteorite = Sprite(met_start_point_x, met_start_point_y, "image\meteorit.png")
 def met_move():
     global fly_met_time, need_met_time, fly_met_timer, need_fly_met_timer, met_fly
     if need_met_time == True:
@@ -581,7 +581,7 @@ m_y = 0
 screen_menu_width = wind_width
 screen_menu_hieght = wind_hieght
 
-screen_menu = pygame.image.load("images\menu_screen.jpg")
+screen_menu = pygame.image.load("image\menu_screen.jpg")
 screen_menu = pygame.transform.scale(screen_menu, (screen_width, screen_menu_hieght))
 #####
 
@@ -592,7 +592,7 @@ play_button_hieght = wind_hieght/100*12.4
 play_button_position_x = wind_width/100*32.5
 play_button_position_y = wind_hieght/100*43.5
 
-play_button = pygame.image.load("images\play.png")
+play_button = pygame.image.load("image\play.png")
 play_button = pygame.transform.scale(play_button, (int(play_button_width), int(play_button_hieght)))
 #####
 
@@ -603,7 +603,7 @@ exit_button_hieght = wind_hieght/100*12.4
 exit_button_position_x = wind_width / 100 * 32.5
 exit_button_position_y = wind_hieght / 100 * 70.4
 
-exit_button = pygame.image.load("images\Exit.png")
+exit_button = pygame.image.load("image\Exit.png")
 exit_button = pygame.transform.scale(exit_button, (int(exit_button_width), int(exit_button_hieght)))
 #####
 
@@ -611,7 +611,7 @@ exit_button = pygame.transform.scale(exit_button, (int(exit_button_width), int(e
 mouse_menu_width = 50
 mouse_menu_hieght = 50
 
-mouse_menu = pygame.image.load("images\empty.png")
+mouse_menu = pygame.image.load("image\empty.png")
 mouse_menu = pygame.transform.scale(mouse_menu, (int(mouse_menu_width), int(mouse_menu_hieght)))
 #####
 
@@ -621,7 +621,7 @@ menu_start = True
 def game_options():
     global enemy1_hells, enemy2_hells, enemy2_condition, enemy1_condition, hero_hells, bullets, win_or_lose_timer
     enemy1_hells = enemy2_hells = hero_hells = 10
-    enemy1_condition = enemy2_condition = "images\e.png"
+    enemy1_condition = enemy2_condition = "image\e.png"
     bullets = 25
     win_or_lose_timer = 0
 while menu_start == True:
