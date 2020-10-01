@@ -35,11 +35,11 @@ game_start_first = True
 
 # text of info string
 pygame.font.init()
-hells_of_hero = pygame.font.Font("Font_txt.ttf", 32)
-bullets_of_hero = pygame.font.Font("Font_txt.ttf", 32)
-hells_of_enemy1 = pygame.font.Font("Font_txt.ttf", 25)
-hells_of_enemy2 = pygame.font.Font("Font_txt.ttf", 25)
-win_or_lose = pygame.font.Font("Font_txt.ttf", 32)
+hells_of_hero = pygame.font.Font("Font.ttf", 32)
+bullets_of_hero = pygame.font.Font("Font.ttf", 32)
+hells_of_enemy1 = pygame.font.Font("Font.ttf", 25)
+hells_of_enemy2 = pygame.font.Font("Font.ttf", 25)
+win_or_lose = pygame.font.Font("Font.ttf", 32)
 win_or_lose_font = False
 ###
 
